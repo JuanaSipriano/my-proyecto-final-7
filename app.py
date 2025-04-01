@@ -1,19 +1,32 @@
+import os
 import pandas as pd
-import plotly.express as px
-import streamlit as st
 
-car_data = pd.read_csv(
-    "/Users/juanasipriano/Documents/my-proyecto-final-7/vehicles_us.csv")
-hist_button = st.button('Construir histograma')
-scatter_button = st.button('Construir gráfico de dispersión')
-if hist_button:
-    st.write(
-        'Creación de un histograma para el conjunto de datos de anuncios de venta de coches')
-    fig = px.histogram(car_data, x="odometer")
-    st.plotly_chart(fig, use_container_width=True)
 
-if scatter_button:
-    st.write(
-        'Creación de un histograma para el conjunto de datos de anuncios de venta de coches')
-    fig = px.scatter(car_data, x="odometer", y="price")
-    st.plotly_chart(fig, use_container_width=True)
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
+
+file_path = os.path.join(base_dir, "data", "vehicles_us.csv")
+
+
+df = pd.read_csv(file_path)
+print(df.head())
+
+
+# import pandas as pd
+# import plotly.express as px
+# import streamlit as st
+
+# car_data = pd.read_csv("/vehicles_us.csv")
+# hist_button = st.button('Construir histograma')
+# scatter_button = st.button('Construir gráfico de dispersión')
+# if hist_button:
+# st.write(
+#   'Creación de un histograma para el conjunto de datos de anuncios de venta de coches')
+# fig = px.histogram(car_data, x="odometer")
+# st.plotly_chart(fig, use_container_width=True)
+
+# if scatter_button:
+# st.write(
+#   'Creación de un histograma para el conjunto de datos de anuncios de venta de coches')
+# fig = px.scatter(car_data, x="odometer", y="price")
+# st.plotly_chart(fig, use_container_width=True)
