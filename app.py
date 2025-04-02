@@ -16,4 +16,4 @@ if scatter_button:
     st.write(
         'Creación de un histograma para el conjunto de datos de anuncios de venta de coches')
     fig = px.scatter(car_data, x="odometer", y="price")
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart
